@@ -20,7 +20,7 @@ def create_one_empty_table(file_name, num_days, times_taken, start_time=0, end_t
 
         # Set values in columns specified by times_taken for the current day
         for times in times_taken[day]:
-            col_index = cols_names.index(str(float(times)))  # Convert to string without decimal part
+            col_index = int( times/ 0.5 )# Convert to string without decimal part
             row_data[col_index] = 1
 
         # Add the row to the DataFrame
@@ -34,8 +34,8 @@ def create_one_empty_table(file_name, num_days, times_taken, start_time=0, end_t
 
     
 def create_mul_tables():
-    create_one_empty_table("first", 3, [[8, 8.5, 9, 9.5, 10, 10.5, 12, 12.5], [], [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 1, 1.5, 2, 2.5, 3]])
+    create_one_empty_table("first", 3, [[8, 8.5, 9, 9.5, 10, 10.5, 12, 12.5], [], [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15]])
     create_one_empty_table("second", 3, [[], [], [8, 8.5, 9, 9.5, 10]])
-    create_one_empty_table("third", 3, [[], [], [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 1, 1.5, 2, 2.5, 3]])
+    create_one_empty_table("third", 3, [[], [], [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 15.5]])
 
 create_mul_tables()
